@@ -3,7 +3,7 @@ Options +FollowSymLinks
 RewriteEngine On
 
 RewriteCond %{SERVER_PORT} 80
-RewriteRule ^(.*)$ https://www.freedomvacationsystems2.com/$1 [R=301,L]
+RewriteRule ^(.*)$ https://www.domainname.com/$1 [R=301,L]
 
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
