@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS}        =on   [OR]
+    RewriteCond %{HTTP_HOST}    !^example\.com$
+    RewriteRule ^(.*)$          "http://example.com/$1" [R=301,L]
+</IfModule>
