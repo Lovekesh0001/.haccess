@@ -1,3 +1,7 @@
+Options -Indexes
+Options +FollowSymLinks
+RewriteEngine On
+
 RewriteCond %{THE_REQUEST} ^.*/index.html 
 RewriteRule ^(.*)index.html$ https://www.crbachelorparties.com/$1 [R=301,L]
 
