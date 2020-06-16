@@ -1,0 +1,18 @@
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^domainname\.com [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://www.domainname.com/$1 [R,L]
+
+#index redirect 
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/ 
+RewriteRule ^index\.html$ https://%{HTTP_HOST}/ [R=301,L]
+
+#remove .html and redirect
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R]
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_URI}.html [NC,L]
+
+# page not founds
+ErrorDocument 404 /404-Error.html
